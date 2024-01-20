@@ -1,0 +1,55 @@
+@import '../../assets/styles/colors.scss';
+
+.slide {
+
+	&__image {
+		width: 100%;
+		aspect-ratio: 1;
+		max-height: 34.4rem;
+		object-fit: cover;
+	}
+
+	&__description {
+		font-size: calc(16px + (28 - 16) * ((100vw - 320px) / (1440 - 320)));
+		line-height: 1;
+		letter-spacing: -0.2%;
+		padding: 3.2rem .2rem 1.6rem;
+		text-align: left;
+		font-weight: 500;
+		text-decoration: none;
+		color: $text-color-text-gray-dark;
+		
+		&:hover {
+			color: $text-color-text-emerald;
+		}
+	}
+
+	&__date {
+		font-size: 1.8rem;
+		font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1440 - 320)));
+		text-align: left;
+		font-weight: 500;
+		color: $text-color-text-gray-light;
+		padding-bottom: 4rem;
+	}
+}
+
+.styleOne {
+	height: 100%;
+	border-top-right-radius: 22rem;
+	border-bottom-left-radius: 22rem;
+}
+
+.styleTwo {	
+	border-top-left-radius: 22rem;
+	border-bottom-right-radius: 22rem;
+}
+
+.styleThree {
+	border-radius: 50%;
+}
+
+.styleFour {	
+	border-top-left-radius: 6rem;
+	border-bottom-right-radius: 6rem;
+}

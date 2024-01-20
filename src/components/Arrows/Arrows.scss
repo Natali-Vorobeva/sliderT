@@ -1,0 +1,33 @@
+@import '../../assets/styles/colors.scss';
+
+.arrows {
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	padding: 1.2rem 3.2rem 9.8rem;
+
+	&__arrow {
+		cursor: pointer;
+		fill: $bg-arrow;
+		stroke: $bg-arrow;
+	} 
+
+	.image-swiper-button-next {
+		transform: rotate(180deg);
+	}
+
+	.swiper-button-disabled {
+		fill: $bg-arrow-disabled;
+		stroke: $bg-arrow-disabled;	
+	} 
+}
+
+@media (max-width:768px){
+
+	.image-swiper-button-prev {
+		width: 2.4rem;
+	}
+	.image-swiper-button-next {
+		width: 2.4rem;
+	}
+}
