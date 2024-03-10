@@ -1,5 +1,6 @@
-import { useSwiper } from 'swiper/react';
-import { ReactComponent as ButtonLeft } from '../../assets/images/arrow-left.svg'
+import { useSwiper } from 'swiper/react'
+import { ReactComponent as Arrow} from '../../assets/images/arrow.svg'
+
 import './Arrows.scss'
 
 function Arrows() {
@@ -8,11 +9,10 @@ function Arrows() {
 
 	return (
 		<div className="arrows">
-			
-			<ButtonLeft onClick={() => swiper.slidePrev()} className="arrows__arrow image-swiper-button-prev  swiper-button-prev " />
-			<ButtonLeft  onClick={() => swiper.slideNext()} className="arrows__arrow image-swiper-button-next swiper-button-next" />
+			<Arrow onClick={() => swiper.slidePrev()} className="arrows__arrow image-swiper-button-prev  swiper-button-prev " />
+			<Arrow onClick={() => swiper.slideNext()} className="arrows__arrow image-swiper-button-next swiper-button-next" />
 		</div>
 	);
 }
 
-export default Arrows;
+export default Arrows

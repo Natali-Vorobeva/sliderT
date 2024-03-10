@@ -1,15 +1,27 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Mousewheel } from 'swiper/modules'
-
-import Slide from '../slide/slide';
-import Arrows from "../Arrows/Arrows";
+import Slide from '../slide/slide'
+import Arrows from "../Arrows/Arrows"
+import data from '../../constants/constants'
+import shuffleArray from '../../utils/shuffleArray'
 
 import './Slider.scss';
 import '../Slide/Slide.scss';
 
-import data from '../../constants/constants'
-
 function Slider() {
+
+	const typesStyle = ['styleOne', 'styleTwo', 'styleThree', 'styleFour', 'styleFive']
+
+	// Перемешивание массива стилей typesStyle
+	shuffleArray(typesStyle)
+
+	const result = data.map((item, i) => (
+		item.title.length > 35
+			?
+			{ ...item, types: 'swiper-double' }
+			:
+			{ ...item, types: typesStyle[i] }
+	));
 
 	return (
 		<section className="slider">
@@ -26,22 +38,11 @@ function Slider() {
 				modules={[Navigation, Mousewheel]}
 				className="mySwiper">
 				{
-					data.map((item) => {
-						const stylesWidth = ['styleOne', 'styleTwo', 'styleThree', 'styleFour'].sort(() => Math.random() - 0.5);
-						let width = '';
-						let length = item.title;
-						stylesWidth.map((style) => {
-							if (length.length < 35) {
-								width = style
-							} else {
-								width = 'swiper-double'
-							}
-						})
-
+					result.map((item) => {
 						return (
-							<SwiperSlide key={item.id} className={`swiper-slide ${width}`}>
+							<SwiperSlide key={item.id} className={`swiper-slide ${item.types}`}>
 								<Slide
-									width={width}
+									width={item.types}
 									image={item.img}
 									title={item.title}
 									date={item.date}

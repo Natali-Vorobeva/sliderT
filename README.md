@@ -1,5 +1,4 @@
-### **React + Vite, swiper + svgr/rollup**
-
+## [Слайдер](https://natali-vorobeva.github.io/sliderT/)
 ### адаптивная и резиновая верстка страницы со слайдером.
 --- 
 Как запустить страницу:
