@@ -29,6 +29,7 @@ function Slider() {
 				slidesPerView={3.47}
 				grabCursor={true}
 				mousewheel={true}
+				passiveListeners={true}
 				containerModifierClass={"swiper-double"}
 				navigation={{
 					nextEl: ".image-swiper-button-next",
